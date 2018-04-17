@@ -239,10 +239,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="MealAndCommentsTableView" destination="i4p-8Y-qw3" id="fJW-27-X45"/>
                         <outlet property="commentTextField" destination="Ze9-pi-cxF" id="Mb1-Nk-vIW"/>
                         <outlet property="commentTextFieldView" destination="FjV-op-kMc" id="DGB-LX-7ZU"/>
                         <outlet property="keyboardHeightLayoutConstraint" destination="3I5-73-i6A" id="XAV-tA-jgs"/>
+                        <outlet property="mealAndCommentsTableView" destination="i4p-8Y-qw3" id="fJW-27-X45"/>
                         <outlet property="saveButton" destination="8xn-6E-7my" id="S6k-qL-mVq"/>
                         <outlet property="sendCommentButtonOutlet" destination="WME-4J-00T" id="bIV-9T-FZk"/>
                         <outlet property="subView" destination="Snj-3a-bhM" id="aZa-l1-GTL"/>

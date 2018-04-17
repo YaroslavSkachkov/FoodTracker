@@ -16,7 +16,7 @@ class MealAndCommentsViewController: UIViewController, UITableViewDataSource, UI
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var subView: UIView!
-    @IBOutlet weak var MealAndCommentsTableView: UITableView!
+    @IBOutlet weak var mealAndCommentsTableView: UITableView!
     @IBOutlet weak var commentTextFieldView: UIView!
     @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     @IBOutlet weak var commentTextField: UITextField!
@@ -99,6 +99,9 @@ class MealAndCommentsViewController: UIViewController, UITableViewDataSource, UI
                 mealCell.nameTextField.text   = meal.name
                 mealCell.photoImageView.image = meal.photo
                 mealCell.ratingControl.rating = meal.rating
+                commentsArray = meal.comments
+                mealAndCommentsTableView.reloadData()
+                self.meal = nil
             }
             updateSaveButtonState()
             return mealCell
@@ -120,7 +123,7 @@ class MealAndCommentsViewController: UIViewController, UITableViewDataSource, UI
         if let nonNilText = commentTextField.text {
             let comment = Comment(comment: nonNilText, date: Date())
             commentsArray.append(comment)
-            self.MealAndCommentsTableView.reloadData()
+            self.mealAndCommentsTableView.reloadData()
             commentTextField.resignFirstResponder()
         }
         commentTextField.text = ""
@@ -184,7 +187,7 @@ class MealAndCommentsViewController: UIViewController, UITableViewDataSource, UI
         let rating = storeForMealCell?.ratingControl.rating
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        meal = Meal(name: name, photo: photo, rating: rating!)
+        meal = Meal(name: name, photo: photo, rating: rating!, comments: commentsArray)
     }
     
     

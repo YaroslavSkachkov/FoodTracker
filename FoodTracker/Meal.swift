@@ -14,6 +14,7 @@ class Meal: NSObject, NSCoding {
     var name: String
     var photo: UIImage?
     var rating: Int
+    var comments: Array<Comment> = []
     
     
     //MARK: Types
@@ -30,7 +31,7 @@ class Meal: NSObject, NSCoding {
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("meals")
     
     // Failable initializer
-    init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, photo: UIImage?, rating: Int, comments: Array<Comment>) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -45,6 +46,7 @@ class Meal: NSObject, NSCoding {
         self.name = name
         self.photo = photo
         self.rating = rating
+        self.comments = comments
     }
     
     //MARK: NSCoding
@@ -64,7 +66,7 @@ class Meal: NSObject, NSCoding {
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         // Must call designated initializer
-        self.init(name: name, photo: photo, rating: rating)
+        self.init(name: name, photo: photo, rating: rating, comments: [])
     }
     
 }
