@@ -100,32 +100,26 @@ class MealAndCommentsViewController: UIViewController, UITableViewDataSource, UI
                 mealCell.photoImageView.image = meal.photo
                 mealCell.ratingControl.rating = meal.rating
             }
-            
             updateSaveButtonState()
-            
             return mealCell
         } else {
             let commentCell = tableView.dequeueReusableCell(withIdentifier: "CommentsCell", for: indexPath) as! CommentsTableViewCell
-            commentCell.commentTextLabel.text = commentsArray[indexPath.row - 1]
-            commentCell.dateLabel.text = dateArray[indexPath.row - 1]
+            commentCell.commentTextLabel.text = commentsArray[indexPath.row - 1].comment
+            commentCell.dateLabel.text = commentsArray[indexPath.row - 1].localizedDate()
             return commentCell
         }
     }
     
     
     // Sendig Comment COMMENTS ARRAY
-    var commentsArray: Array<String> = []
-    var dateArray: Array<String> = []
+    var commentsArray: Array<Comment> = []
+    
+    
     @IBAction func sendCommentButton(_ sender: UIButton) {
         
         if let nonNilText = commentTextField.text {
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd-MMM-yyyy HH:mm"
-            let dateString = formatter.string(from: Date())
-            dateArray.append(dateString)
-            
-            commentsArray.append(nonNilText)
+            let comment = Comment(comment: nonNilText, date: Date())
+            commentsArray.append(comment)
             self.MealAndCommentsTableView.reloadData()
             commentTextField.resignFirstResponder()
         }

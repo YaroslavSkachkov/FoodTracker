@@ -17,6 +17,7 @@
 		5C6209511FF65F0900395724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C62094F1FF65F0900395724 /* LaunchScreen.storyboard */; };
 		5C62095C1FF65F0900395724 /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C62095B1FF65F0900395724 /* FoodTrackerTests.swift */; };
 		5C7471551FF6A249007658FC /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7471541FF6A249007658FC /* RatingControl.swift */; };
+		5CB24A0B2085F5DB004FB04D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB24A0A2085F5DB004FB04D /* Comment.swift */; };
 		5CCBEB2F205BCCE600E1CA7C /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCBEB2E205BCCE600E1CA7C /* Meal.swift */; };
 		5CCD3908207E7BEE00996833 /* MealAndCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCD3907207E7BEE00996833 /* MealAndCommentsTableViewCell.swift */; };
 		5CCD390A207E7C1600996833 /* MealAndCommentsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCD3909207E7C1600996833 /* MealAndCommentsTableView.swift */; };
@@ -49,6 +50,7 @@
 		5C62095B1FF65F0900395724 /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		5C62095D1FF65F0900395724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C7471541FF6A249007658FC /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		5CB24A0A2085F5DB004FB04D /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		5CCBEB2E205BCCE600E1CA7C /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		5CCD3907207E7BEE00996833 /* MealAndCommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAndCommentsTableViewCell.swift; sourceTree = "<group>"; };
 		5CCD3909207E7C1600996833 /* MealAndCommentsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAndCommentsTableView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				5C6209461FF65F0900395724 /* AppDelegate.swift */,
 				5C6209481FF65F0900395724 /* MealViewController.swift */,
 				5CCBEB2E205BCCE600E1CA7C /* Meal.swift */,
+				5CB24A0A2085F5DB004FB04D /* Comment.swift */,
 				5C62094A1FF65F0900395724 /* Main.storyboard */,
 				5C2A03E1205BDC340031495D /* MealTableViewController.swift */,
 				5C2A03DF205BD74B0031495D /* MealTableViewCell.swift */,
@@ -249,6 +252,7 @@
 				5C7471551FF6A249007658FC /* RatingControl.swift in Sources */,
 				5C6209471FF65F0900395724 /* AppDelegate.swift in Sources */,
 				5C41F50B206640A3001CEA2E /* ZoomedMealViewController.swift in Sources */,
+				5CB24A0B2085F5DB004FB04D /* Comment.swift in Sources */,
 				5C2A03E2205BDC340031495D /* MealTableViewController.swift in Sources */,
 				5C2A03E0205BD74B0031495D /* MealTableViewCell.swift in Sources */,
 				5CCD390A207E7C1600996833 /* MealAndCommentsTableView.swift in Sources */,
