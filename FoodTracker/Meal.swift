@@ -14,7 +14,7 @@ class Meal: NSObject, NSCoding {
     var name: String
     var photo: UIImage?
     var rating: Int
-    var comments: Array<Comment> = []
+    var comments: Array<Comment>
     
     
     //MARK: Types
@@ -23,6 +23,7 @@ class Meal: NSObject, NSCoding {
         static let name = "name"
         static let photo = "photo"
         static let rating = "rating"
+        static let comments = "comments"
     }
    
     //MARK: Archiving Paths
@@ -54,6 +55,7 @@ class Meal: NSObject, NSCoding {
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(photo, forKey: PropertyKey.photo)
         aCoder.encode(rating, forKey: PropertyKey.rating)
+        aCoder.encode(comments, forKey: PropertyKey.comments)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -65,8 +67,9 @@ class Meal: NSObject, NSCoding {
         // Because photo is an optional property of Meal, just use conditional cast.
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
+        let comments = (aDecoder.decodeObject(forKey: PropertyKey.comments) as? Array<Comment>) ?? Array<Comment>()
         // Must call designated initializer
-        self.init(name: name, photo: photo, rating: rating, comments: [])
+        self.init(name: name, photo: photo, rating: rating, comments: comments)
     }
     
 }

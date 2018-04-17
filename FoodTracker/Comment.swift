@@ -8,8 +8,7 @@
 
 import Foundation
 
-class Comment {
-    
+class Comment: NSObject, NSCoding {
     
     var comment: String
     var date: Date
@@ -25,5 +24,25 @@ class Comment {
         let dateString = formatter.string(from: date)
         return dateString
     }
+    
+    struct PropertyKey {
+        static let comment = "comment"
+        static let date = "date"
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(comment, forKey: PropertyKey.comment)
+        aCoder.encode(date, forKey: PropertyKey.date)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        guard let comment = aDecoder.decodeObject(forKey: PropertyKey.comment) as? String else {
+            return nil
+        }
+        let date = aDecoder.decodeObject(forKey: PropertyKey.date) as! Date
+        self.init(comment: comment, date: date)
+    }
+    
+    
     
 }
